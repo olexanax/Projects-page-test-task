@@ -4,12 +4,12 @@ import {
     createAsyncThunk,
 } from "@reduxjs/toolkit";
 import { useHttp } from "../hooks/useHttp";
-import { ProjectType, RootState } from "../interfaces";
+import { ProjectType, RootState, ProjectsState } from "../interfaces";
 
 const projectsAdapter = createEntityAdapter<ProjectType>();
 
-const initialState = projectsAdapter.getInitialState({
-    projectsLoadingSataus: "idle",
+const initialState: ProjectsState = projectsAdapter.getInitialState({
+    projectsLoadingStatus: "idle",
 });
 
 export const fetchProjects = createAsyncThunk("projects/fetchProjects", () => {
@@ -26,14 +26,14 @@ const projectsSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchProjects.pending, (state) => {
-                state.projectsLoadingSataus = "loading";
+                state.projectsLoadingStatus = "loading";
             })
             .addCase(fetchProjects.fulfilled, (state, { payload }) => {
                 projectsAdapter.setAll(state, payload);
-                state.projectsLoadingSataus = "idle";
+                state.projectsLoadingStatus = "idle";
             })
             .addCase(fetchProjects.rejected, (state) => {
-                state.projectsLoadingSataus = "error";
+                state.projectsLoadingStatus = "error";
             });
     },
 });

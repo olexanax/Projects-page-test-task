@@ -146,3 +146,6 @@ body {
     background-color: #1890ff;
     border-radius: 9em;
 }
+* {
+    transition: all 0.3s ease;
+}

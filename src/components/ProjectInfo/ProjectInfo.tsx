@@ -1,8 +1,9 @@
-import BackButton from "../BackButton/BackButton";
 import { useParams } from "react-router-dom";
 import { useHttp } from "../../hooks/useHttp";
 import { useEffect, useState } from "react";
 import { ProjectType } from "../../interfaces";
+
+import BackButton from "../BackButton/BackButton";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import Spinner from "../Spinner/Spinner";
 
@@ -23,6 +24,7 @@ const ProjectInfo: React.FC = () => {
                 setStatus("idle");
             })
             .catch(() => setStatus("error"));
+        // eslint-disable-next-line
     }, []);
 
     const spinner = status === "loading" ? <Spinner /> : null;

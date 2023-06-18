@@ -1,24 +1,23 @@
-import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import { selectAll, fetchProjects } from "../../slices/projectsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { AppDispatch, ProjectType, RootState } from "../../interfaces";
+
+import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import Spinner from "../Spinner/Spinner";
 
 const ProjectsWrapper: React.FC = () => {
     const projects = useSelector(selectAll);
     const status = useSelector(
-        (state: RootState) => state.projects.projectsLoadingSataus
+        (state: RootState) => state.projects.projectsLoadingStatus
     );
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
         dispatch(fetchProjects());
+        // eslint-disable-next-line
     }, []);
-    useEffect(() => {
-        console.log(projects);
-    });
 
     const spinner = status === "loading" ? <Spinner /> : null;
     const error = status === "error" ? <ErrorMessage /> : null;

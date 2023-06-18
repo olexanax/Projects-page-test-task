@@ -1,4 +1,5 @@
 import gif from "../../images/error.gif";
+
 const ErrorMessage: React.FC = () => {
     return (
         <div className="w-full flex flex-col gap-5 items-center justify-center p-4">

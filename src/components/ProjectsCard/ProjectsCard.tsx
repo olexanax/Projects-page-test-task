@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ProjectsCardProps } from "../../interfaces";
+
 const ProjectsCard: React.FC<ProjectsCardProps> = ({
     name,
     id,
@@ -7,8 +8,12 @@ const ProjectsCard: React.FC<ProjectsCardProps> = ({
     ShortDescription,
 }) => {
     return (
-        <li className=" p-2 sm:p-4 flex flex-col gap-2 items-center max-w-[400px] rounded-2xl bg-white">
-            <img className="rounded-2xl" src={image} alt="" />
+        <li className=" p-2 sm:p-4 flex flex-col gap-2 items-center max-w-[400px] min-h-[500px] rounded-2xl bg-white hover:drop-shadow-xl">
+            <img
+                className="rounded-2xl w-full h-[200px] object-cover"
+                src={image}
+                alt=""
+            />
             <h3 className="uppercase tracking-widest p-2 font-extrabold ">
                 {name}
             </h3>
