@@ -30,6 +30,7 @@ const projectsSlice = createSlice({
             })
             .addCase(fetchProjects.fulfilled, (state, { payload }) => {
                 projectsAdapter.setAll(state, payload);
+                state.projectsLoadingSataus = "idle";
             })
             .addCase(fetchProjects.rejected, (state) => {
                 state.projectsLoadingSataus = "error";

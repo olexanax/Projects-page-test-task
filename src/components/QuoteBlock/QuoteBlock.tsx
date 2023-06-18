@@ -1,6 +1,6 @@
 const QuoteBlock = () => {
     return (
-        <div className=" rounded-2xl bg-white p-10 m-5">
+        <div className=" rounded-2xl bg-white p-10 m-5 mt-auto">
             <p className="italic mb-4">
                 When people choose bread between bread and freedom, they
                 eventually lose everything, including bread.
