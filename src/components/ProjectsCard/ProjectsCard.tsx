@@ -7,7 +7,7 @@ const ProjectsCard: React.FC<ProjectsCardProps> = ({
     ShortDescription,
 }) => {
     return (
-        <li className=" p-4 flex flex-col gap-2 items-center w-96 rounded-2xl bg-white">
+        <li className=" p-2 sm:p-4 flex flex-col gap-2 items-center max-w-[400px] rounded-2xl bg-white">
             <img className="rounded-2xl" src={image} alt="" />
             <h3 className="uppercase tracking-widest p-2 font-extrabold ">
                 {name}

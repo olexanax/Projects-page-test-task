@@ -45,7 +45,7 @@ const ProjectsWrapper: React.FC = () => {
             : null;
 
     return (
-        <ul className="p-10 flex flex-wrap gap-8 justify-center">
+        <ul className="sm:p-10 p-4 flex flex-wrap gap-8 justify-center flex-1">
             {spinner}
             {error}
             {content}

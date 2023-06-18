@@ -30,9 +30,15 @@ const ProjectInfo: React.FC = () => {
     const content =
         status === "idle" ? (
             <>
-                <h1 className="text-6xl">{project?.name}</h1>
-                <img className="rounded-2xl h-96" src={project?.image} alt="" />
-                <p className="p-10">{project?.longDescription}</p>
+                <h1 className="sm:text-6xl text-3xl pl-8 pr-8 text-center">
+                    {project?.name}
+                </h1>
+                <img
+                    className="rounded-2xl max-h-96"
+                    src={project?.image}
+                    alt=""
+                />
+                <p className="sm:p-10">{project?.longDescription}</p>
             </>
         ) : null;
 
